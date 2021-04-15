@@ -1,0 +1,51 @@
+﻿@model MVCTestProject.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostContent)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.AuthorId)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.CategoryId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageName)
+        </dd>
+
+        <dt>
+            <img src="data:image;base64,@System.Convert.ToBase64String(Model.Image ?? new byte[0])" style="width:100px;height:80px" onerror="this.src='';" />
+        </dt>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
